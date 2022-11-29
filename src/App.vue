@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComp/>
+    <HeaderComp @search="searchFilm"/>
     <MainComp/>
   </div>
 </template>
@@ -16,23 +16,24 @@ export default {
     HeaderComp,
     MainComp
   },
+
   data() {
        return {
-
+        array: []
        }
     },
 
     mounted(){
-      
 
-    },
+ },
 
     methods: {
-
-      cerca(){
-      axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + )
-        .then(())
-    }
+      searchFilm(searchText){
+        axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
+                            .then((response) => {
+                                this.array = response.data.results
+                    })
+      }
     }
   
 

@@ -4,7 +4,8 @@
       <img src="../assets/Netflix-symbol.jpg" alt="">
     </div>
     <div class="inputButton">
-      <input type="text" placeholder="Cerca un film" v-model="textInput" >
+      <input type="text" placeholder="Cerca un film" v-model="inputText" @keyup.enter="$emit('search', inputText)">
+      
       <button >Cerca</button>
    </div>
   </div>
@@ -12,17 +13,18 @@
 
 <script>
 
+
+
 export default {
   name: 'HeaderComp',
  
   data() {
     return {
+      inputText: '',
     }
-  }
+  },
 
 }
-
-
 
 </script>
 

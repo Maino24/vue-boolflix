@@ -6,8 +6,18 @@
 
 <script>
     export default {
-      name: 'MainComp'
+      name: 'MainComp',
+        props: {
+
+        },
+
+   
+
     }
+
+    
+
+
 </script>
 
 <style lang="scss" scoped>

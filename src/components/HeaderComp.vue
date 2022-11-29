@@ -5,7 +5,7 @@
     </div>
     <div class="inputButton">
       <input type="text" placeholder="Cerca un film" v-model="textInput" >
-      <button @keyup.enter="textInput">Cerca</button>
+      <button >Cerca</button>
    </div>
   </div>
 </template>
@@ -17,7 +17,6 @@ export default {
  
   data() {
     return {
-      textInput: ``
     }
   }
 

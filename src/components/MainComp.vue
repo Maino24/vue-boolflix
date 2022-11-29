@@ -1,47 +1,35 @@
 <template>
-    <div>
-      <!--  <FilmsComp v-for="(elem, index) in array"
+    <div class="background">
+        <FimlsCard v-for="(elem, index) in card"
         :key="index"
-        :card= "elem"/>-->
+        :card="elem"/>
     </div>
 </template>
 
 <script>
-//import FilmsComp from './FilmsComp.vue'
-//import axios from 'axios'
+
+import FilmsCard from '../components/FilmsCard.vue'
 
     export default {
-      name: 'MainComp',
-       components: {
-        //FilmsComp
-       },
-       data(){
-        return {
-          //  array: []
-        }
-       },
-       mounted() {
-       // this.get()
-       },
-       methods: {
+        name: 'MainComp',
 
-     //   get(){
-
-    //        axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
-    //                        .then((response) => {
-    //                            this.array = response.results.response
-     //               })
-
-        }
-
-
-       } 
-
-    
-
-
+        props: {
+            card: Object
+        },
+        components: {
+            FilmsCard
+        },
+        
+    }
 </script>
 
 <style lang="scss" scoped>
+
+.background{
+    height: calc(100% - 15%);
+    width: 100%;
+    background-color: rgb(40, 39, 39);
+    
+}
 
 </style>

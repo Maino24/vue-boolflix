@@ -1,19 +1,30 @@
 <template>
   <div class="header">
     <div class="logo">
-      <img src="../assets/Netflix_icon.svg.webp" alt="">
+      <img src="../assets/Netflix-symbol.jpg" alt="">
     </div>
-    <div class="input">
-      <input type="text">
+    <div class="inputButton">
+      <input type="text" placeholder="Cerca un film" v-model="textInput" >
+      <button @keyup.enter="textInput">Cerca</button>
    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HeaderComp',
-  
+ 
+  data() {
+    return {
+      textInput: ``
+    }
+  }
+
 }
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -33,8 +44,20 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+
   img{
-    width: 8%;
+    width: 15%;
+  }
+
+  .inputButton{
+    display: flex;
+    
+
+  button{
+    padding: 8px;
+    
+  }
+
   }
 
 }

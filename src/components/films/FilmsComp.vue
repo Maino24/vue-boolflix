@@ -33,7 +33,7 @@ import FilmsCard from './FilmsCard.vue'
 
 .card{
     display: flex;
-    margin: auto;
+   
     flex-wrap: wrap;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderComp @search="searchFilm"/>
-    <MainComp :card="array"/>
+    <HeaderComp @search="searchFilm" />
+    <MainComp :card="array" />
   </div>
 </template>
 
@@ -35,8 +35,6 @@ export default {
                     })
       }
     }
-  
-
 }
 </script>
 

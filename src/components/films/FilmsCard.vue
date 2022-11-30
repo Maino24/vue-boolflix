@@ -1,8 +1,7 @@
 <template>
     <div class="card">
-        <FimlsCard v-for="(elem, index) in filmsData"
-        :key="index"
-        :card="elem"/>
+       
+        <h1>{{singleFIlm.title}}</h1>
     </div>
 </template>
 
@@ -10,10 +9,10 @@
 
 
     export default {
-        name: `FilmsCard`,
+        name: 'FilmsCard',
 
         props: {
-            card: Object
+            singleFilm: Object
         }
     }
 </script>

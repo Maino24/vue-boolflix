@@ -1,12 +1,12 @@
 <template>
     <div class="background">
-        <FilmsCard :filmsData="array"/>
+        <FilmsComp :card="card"/>
     </div>
 </template>
 
 <script>
 
-import FilmsCard from '../components/FilmsCard.vue'
+import FilmsComp from './films/FilmsComp.vue'
 
     export default {
         name: 'MainComp',
@@ -15,7 +15,7 @@ import FilmsCard from '../components/FilmsCard.vue'
             card: Array
         },
         components: {
-            FilmsCard
+            FilmsComp
         },
         
     }

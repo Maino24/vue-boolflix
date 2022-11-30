@@ -5,6 +5,7 @@
         <div id="originalTitle">{{singleFilm.original_title}}</div>
         <div id="vote">{{singleFilm.vote_average}}</div> 
         <div id="language">{{singleFilm.original_language}}</div> 
+        <img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> 
     </div>
 </template>
 
@@ -16,11 +17,22 @@
 
         props: {
             singleFilm: Object
+        },
+
+        data() {
+            
+        },
+
+        methods: {
+           
         }
+
+       
     }
 </script>
 
 <style lang="scss" scoped>
+
 *{
     margin: 0;
     padding: 0;
@@ -49,6 +61,11 @@
         color: blue;
         width: 100%;
     }
+
+    img{
+        width: 100%;
+    }
+
 
 }
 

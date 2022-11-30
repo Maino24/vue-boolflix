@@ -29,6 +29,7 @@ import FilmsComp from './films/FilmsComp.vue'
     height: calc(100% - 15%);
     width: 100%;
     background-color: rgb(40, 39, 39);
+    overflow-y: scroll;
     .paddingMain{
         padding: 50px;
     }

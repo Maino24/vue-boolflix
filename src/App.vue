@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComp @search="searchFilm"/>
-    <MainComp/>
+    <MainComp :card="array"/>
   </div>
 </template>
 

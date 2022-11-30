@@ -1,8 +1,6 @@
 <template>
     <div class="background">
-        <FimlsCard v-for="(elem, index) in card"
-        :key="index"
-        :card="elem"/>
+        <FilmsCard :filmsData="array"/>
     </div>
 </template>
 
@@ -14,7 +12,7 @@ import FilmsCard from '../components/FilmsCard.vue'
         name: 'MainComp',
 
         props: {
-            card: Object
+            card: Array
         },
         components: {
             FilmsCard

@@ -1,6 +1,8 @@
 <template>
     <div class="card">
-        <img src="http://image.tmdb.org/t/p/w342/${card.backdrop_path}" alt=""> 
+        <FimlsCard v-for="(elem, index) in filmsData"
+        :key="index"
+        :card="elem"/>
     </div>
 </template>
 

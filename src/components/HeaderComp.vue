@@ -4,7 +4,7 @@
       <img src="../assets/Netflix-symbol.jpg" alt="">
     </div>
     <div class="inputButton">
-      <input type="text" placeholder="Cerca un film" v-model="inputText" @keyup.enter="$emit('search', inputText)">
+      <input type="text" placeholder="Cerca..." v-model="inputText" @keyup="$emit('search', inputText)">
       
       <button >Cerca</button>
    </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         
-        <FimlsCard v-for="(elem, index) in card"
+        <FilmsCard v-for="(elem, index) in card"
         :key="index"
         :singleFilm="elem"/>
         

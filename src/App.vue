@@ -28,6 +28,8 @@ export default {
  },
 
     methods: {
+
+      
       searchFilm(searchText){
         axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
                             .then((response) => {
@@ -35,6 +37,7 @@ export default {
                     })
       }
     }
+    
 }
 </script>
 

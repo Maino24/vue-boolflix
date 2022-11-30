@@ -25,5 +25,15 @@ import FilmsCard from './FilmsCard.vue'
 </script>
 
 <style lang="scss" scoped>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.card{
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+}
 </style>

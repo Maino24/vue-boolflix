@@ -1,6 +1,8 @@
 <template>
     <div class="background">
-        <FilmsComp :card="card"/>
+        <div class="paddingMain">
+            <FilmsComp :card="card"/>
+        </div>
     </div>
 </template>
 
@@ -27,7 +29,9 @@ import FilmsComp from './films/FilmsComp.vue'
     height: calc(100% - 15%);
     width: 100%;
     background-color: rgb(40, 39, 39);
-    
+    .paddingMain{
+        padding: 50px;
+    }
 }
 
 </style>

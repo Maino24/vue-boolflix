@@ -4,9 +4,8 @@
       <img src="../assets/Netflix-symbol.jpg" alt="">
     </div>
     <div class="inputButton">
-      <input type="text" placeholder="Cerca..." v-model="inputText" @keyup="$emit('search', inputText)">
-      
-      <button >Cerca</button>
+      <input type="text" placeholder="Cerca..." v-model="inputText" >
+      <button @click="$emit('search', inputText)">Search</button>
    </div>
   </div>
 </template>

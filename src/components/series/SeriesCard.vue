@@ -7,6 +7,10 @@
         <div id="vote">{{singleSeries.vote_average}}</div> 
         <div id="language">{{singleSeries.original_language}}</div> 
         <!--<img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> -->
+
+        <img class="flags" :src=" `https://www.countryflagicons.com/FLAT/64/${
+            (singleSeries.original_language == 'en') ? 'GB' : ((singleSeries.original_language == 'ja') ? 'JP' : singleSeries.original_language.toUpperCase())
+        }.png` " >
         
     </div>
 </template>
@@ -60,6 +64,9 @@
         width: 100%;
     }
 
+    .flags{
+        width: 20%;
+    }
 
 }
 

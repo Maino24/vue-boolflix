@@ -8,7 +8,11 @@
         <div id="language">{{singleFilm.original_language}}</div> 
         <div id="overview">{{singleFilm.overview}}</div>
         <!--<img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> -->
-        <img id="flags" src="https://flagsapi.com/BE/shiny/64.png">
+        
+        <img flags :src=" `https://www.countryflagicons.com/FLAT/64/${
+            (singleFilm.original_language == 'en') ? 'GB' : ((singleFilm.original_language == 'ja') ? 'JP' : singleFilm.original_language.toUpperCase())
+        }.png` " >
+      
          
     </div>
 </template>
@@ -59,7 +63,7 @@
     }
 
     #language{
-        display: none;
+       // display: none;
         color: blue;
         width: 100%;
     }
@@ -69,7 +73,7 @@
     }
     
     #flags{
-        display: none;
+        //display: none;
     }
 
    .poster{
@@ -81,11 +85,11 @@
 .card:hover{
 
     .poster{
-        display: none;
+       // display: none;
     }
 
     #overview{
-        display: block;
+       // display: block;
     }
 }
 

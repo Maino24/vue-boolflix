@@ -1,7 +1,8 @@
 <template>
     <div class="card">
        
-        <img :src="`https://image.tmdb.org/t/p/w342/${singleSeries.poster_path}`" alt=""> 
+        <img class="poster" v-if="singleSeries.poster_path" :src="`https://image.tmdb.org/t/p/w342/${singleSeries.poster_path}`" alt=""> 
+        <img class="poster" v-else src="https://th.bing.com/th/id/OIP.joZ4eKstRuAD6HSWmYJrMgHaHa?pid=ImgDet&rs=1" alt="">
         <div id="title">{{singleSeries.name}}</div>
         <div id="originalTitle">{{singleSeries.original_title}}</div>
         <div id="vote">{{singleSeries.vote_average}}</div> 
@@ -41,6 +42,12 @@
     background-color: rgb(78, 78, 78);
     border: 4px solid black;
     margin-top: 50px;
+
+    .poster{
+        width: 100%;
+        height: 100%;
+    }
+
     #title{
         color: white;
         width: 100%;
@@ -60,9 +67,7 @@
         width: 100%;
     }
 
-    img{
-        width: 100%;
-    }
+   
 
     .flags{
         width: 20%;

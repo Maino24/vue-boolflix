@@ -34,7 +34,6 @@ import FilmsCard from './FilmsCard.vue'
 
 .card{
     display: flex;
-   
     flex-wrap: wrap;
 }
 </style>

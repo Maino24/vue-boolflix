@@ -1,8 +1,14 @@
 <template>
     <div class="background">
-        <div class="paddingMain">
-            <FilmsComp :card="card"/>
-            <SeriesComp :cardS="cardS"/>
+        <div class="containerMain">
+            <div>
+                <h1>FILM</h1>
+                <FilmsComp :card="card"/>
+            </div>
+            <div>
+                <h1>SERIE TV</h1>
+                <SeriesComp :cardS="cardS"/>
+            </div>
         </div>
     </div>
 </template>
@@ -23,7 +29,6 @@ import SeriesComp from './series/SeriesComp.vue'
             FilmsComp,
             SeriesComp
         },
-        
     }
 </script>
 
@@ -34,8 +39,14 @@ import SeriesComp from './series/SeriesComp.vue'
     width: 100%;
     background-color: rgb(40, 39, 39);
     overflow-y: scroll;
-    .paddingMain{
+    .containerMain{
         padding: 50px;
+    }
+
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 5rem;
     }
 }
 

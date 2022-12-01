@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderComp @search="searchFilm" />
    
-    <MainComp :card="array" :cardS="array"  />
+    <MainComp :card="array" :cardS="arrayS"  />
     
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
        }
     },
 
-    mounted(){
+  mounted(){
 
  },
 
@@ -34,12 +34,16 @@ export default {
 
       
       searchFilm(searchText){
+        //https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=
+
         axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
-                            .then((response) => {
-                                this.array = response.data.results
-                    })
-     
-        axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
+                          .then((response) => {
+                              this.array = response.data.results
+                          })
+
+                    
+        //https://api.themoviedb.org/3/search/tv?api_key=891ac8a7cc8711cdf969761d6e219d2d&language=it_IT&query=
+        axios.get("https://api.themoviedb.org/3/search/tv?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
                             .then((response) => {
                                 this.arrayS = response.data.results
                     })

@@ -25,6 +25,7 @@ import SeriesCard from './SeriesCard.vue'
 </script>
 
 <style lang="scss" scoped>
+
 *{
     margin: 0;
     padding: 0;
@@ -33,7 +34,6 @@ import SeriesCard from './SeriesCard.vue'
 
 .card{
     display: flex;
-   
     flex-wrap: wrap;
 }
 </style>

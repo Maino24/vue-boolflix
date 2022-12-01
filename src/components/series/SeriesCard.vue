@@ -20,15 +20,6 @@
         props: {
             singleSeries: Object
         },
-
-        data() {
-            
-        },
-
-        methods: {
-           
-        }
-
        
     }
 </script>

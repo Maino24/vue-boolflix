@@ -1,19 +1,21 @@
 <template>
-    <div class="card">
-       
-        <img class="poster" v-if="singleFilm.poster_path" :src="`https://image.tmdb.org/t/p/w342/${singleFilm.poster_path}`" alt=""> 
-        <img class="poster" v-else src="https://th.bing.com/th/id/OIP.joZ4eKstRuAD6HSWmYJrMgHaHa?pid=ImgDet&rs=1" alt="">
-        <div id="title">{{singleFilm.title}}</div>
-        <div id="originalTitle">{{singleFilm.original_title}}</div>
-        <div id="vote">{{singleFilm.vote_average}}</div> 
-        <div id="language">{{singleFilm.original_language}}</div> 
-        <div id="overview">{{singleFilm.overview}}</div>
-        <!--<img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> -->
-        
-        <img flags :src=" `https://www.countryflagicons.com/FLAT/64/${
-            (singleFilm.original_language == 'en') ? 'GB' : ((singleFilm.original_language == 'ja') ? 'JP' : singleFilm.original_language.toUpperCase())
-        }.png` " >
-      
+    <div class="card"  >
+        <div class="cardFront" v-on:mouseover="active = !active" v- >
+            <img class="poster" v-if="singleFilm.poster_path" :src="`https://image.tmdb.org/t/p/w342/${singleFilm.poster_path}`" alt=""> 
+            <img class="poster" v-else src="https://th.bing.com/th/id/OIP.joZ4eKstRuAD6HSWmYJrMgHaHa?pid=ImgDet&rs=1" alt="">
+        </div> 
+        <div class="cardBack"  v-if="active">
+            <div id="title">{{singleFilm.title}}</div>
+            <div id="originalTitle">{{singleFilm.original_title}}</div>
+            <div id="vote">{{singleFilm.vote_average}}</div> 
+            <div id="language">{{singleFilm.original_language}}</div> 
+            <div id="overview">{{singleFilm.overview}}</div>
+            <!--<img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> -->
+            
+            <img flags :src=" `https://www.countryflagicons.com/FLAT/64/${
+                (singleFilm.original_language == 'en') ? 'GB' : ((singleFilm.original_language == 'ja') ? 'JP' : singleFilm.original_language.toUpperCase())
+            }.png` " >
+        </div>
          
     </div>
 </template>
@@ -23,10 +25,19 @@
 
     export default {
         name: 'FilmsCard',
-
+    
         props: {
             singleFilm: Object
         },
+
+        data() {
+            return {
+                active: false
+            }
+        },
+        methods: {
+          
+        }
        
     }
 </script>
@@ -51,50 +62,32 @@
     }
     
     #title{
-        display: none;
+        
         color: white;
         width: 100%;
     }
 
     #originalTitle{
-        display: none;
+       
         width: 100%;
     }
 
     #vote{
-        display: none;
+        
         color: white;
         width: 100%;
     }
 
     #language{
-       // display: none;
+       
         color: blue;
         width: 100%;
     }
 
-    #overview{
-        display: none;
-    }
-    
-    #flags{
-        //display: none;
-    }
+ 
 
-   
-    
 }
 
-.card:hover{
-
-    .poster{
-       // display: none;
-    }
-
-    #overview{
-       // display: block;
-    }
-}
 
 
 </style>

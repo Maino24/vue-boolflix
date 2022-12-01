@@ -29,6 +29,12 @@ import SeriesComp from './series/SeriesComp.vue'
             FilmsComp,
             SeriesComp
         },
+
+        data(){
+            return{
+                
+            }
+        }
     }
 </script>
 

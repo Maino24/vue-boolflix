@@ -58,9 +58,9 @@
 
 .card{
     width: calc(100% / 6);
-    height: 400px;
-    background-color: rgb(78, 78, 78);
-    border: 4px solid black;
+
+    background-color: rgb(112, 111, 111);
+    border: 5px solid black;
     margin-top: 50px;
     color: white;
     .poster{
@@ -102,9 +102,10 @@
 
     
     .card:hover{
-    scale: 1.1;
+    scale: 1.3;
     position: relative;
-    z-index: 3;
+    z-index: 1;
+    border: 5px solid black;
     }
 
     .card:hover .cardFront{

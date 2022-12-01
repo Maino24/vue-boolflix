@@ -1,13 +1,13 @@
 <template>
     <div class="card">
        
-        <img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.poster_path}`" alt=""> 
-        <div id="title">{{singleFilm.title}}</div>
-        <div id="originalTitle">{{singleFilm.original_title}}</div>
-        <div id="vote">{{singleFilm.vote_average}}</div> 
-        <div id="language">{{singleFilm.original_language}}</div> 
+        <img :src="`https://image.tmdb.org/t/p/w342/${singleSeries.poster_path}`" alt=""> 
+        <div id="title">{{singleSeries.name}}</div>
+        <div id="originalTitle">{{singleSeries.original_title}}</div>
+        <div id="vote">{{singleSeries.vote_average}}</div> 
+        <div id="language">{{singleSeries.original_language}}</div> 
         <!--<img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> -->
-         <img :src="`../../assets/${singleFilm.original_language}.png`" alt="">
+        
     </div>
 </template>
 
@@ -15,16 +15,14 @@
 
 
     export default {
-        name: 'FilmsCard',
+        name: 'SeriesCard',
 
         props: {
-            singleFilm: Object
+            singleSeries: Object
         },
 
         data() {
-            return {
-            arrayLenguages: ['en', 'it', 'de', 'fr', 'es']
-            }
+            
         },
 
         methods: {
@@ -69,10 +67,6 @@
 
     img{
         width: 100%;
-    }
-
-    .imgBandiera{
-        
     }
 
 

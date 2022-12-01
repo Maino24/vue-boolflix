@@ -1,26 +1,25 @@
 <template>
     <div class="card">
         
-        <FilmsCard v-for="(elem, index) in card"
+        <SeriesCard v-for="(elem, index) in cardS"
         :key="index"
-        :singleFilm="elem"/>
+        :singleSeries="elem"/>
         
     </div>
 </template>
 
 <script>
 
-import FilmsCard from './FilmsCard.vue'
+import SeriesCard from './SeriesCard.vue'
 
     export default {
-        name: `FilmsComp`,
+        name: `SeriesComp`,
 
         props: {
-            card: Array
+            cardS: Array
         },
-        
         components: {
-            FilmsCard
+            SeriesCard
         }
     }
 </script>

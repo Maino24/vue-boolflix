@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <HeaderComp @search="searchFilm" />
-    <MainComp :card="array" />
+   
+    <MainComp :card="array" :cardS="array"  />
+    
   </div>
 </template>
 
@@ -19,7 +21,8 @@ export default {
 
   data() {
        return {
-        array: []
+        array: [],
+        arrayS: []
        }
     },
 
@@ -35,7 +38,13 @@ export default {
                             .then((response) => {
                                 this.array = response.data.results
                     })
-      }
+     
+        axios.get("https://api.themoviedb.org/3/search/movie?api_key=891ac8a7cc8711cdf969761d6e219d2d&query=" + searchText )
+                            .then((response) => {
+                                this.arrayS = response.data.results
+                    })
+      },
+
     }
     
 }

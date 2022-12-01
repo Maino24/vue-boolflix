@@ -2,6 +2,7 @@
     <div class="background">
         <div class="paddingMain">
             <FilmsComp :card="card"/>
+            <SeriesComp :cardS="cardS"/>
         </div>
     </div>
 </template>
@@ -9,15 +10,18 @@
 <script>
 
 import FilmsComp from './films/FilmsComp.vue'
+import SeriesComp from './series/SeriesComp.vue'
 
     export default {
         name: 'MainComp',
 
         props: {
-            card: Array
+            card: Array,
+            cardS: Array
         },
         components: {
-            FilmsComp
+            FilmsComp,
+            SeriesComp
         },
         
     }

@@ -9,7 +9,19 @@
            <!-- v-if="active"-->
             <div id="title"><span>TITOLO:</span> <h4>{{singleFilm.title}}</h4></div>
             <div id="originalTitle"><span>TITOLO ORIGINALE:</span> <div>{{singleFilm.original_title}}</div></div>
-            <div id="vote"><span>VOTO:</span> {{singleFilm.vote_average}}</div> 
+            <div id="vote">
+                
+              <!--- funzione per voto -->
+            <li>Voto:{{ votoMedio(singleFilm.vote_average)}}</li>
+
+            <!--- stelline -->
+            <span v-for="(elem, index) in 5" :key="index">
+                <i v-if="(voto > index)" class="fa-solid fa-star"></i>
+                <i v-else class="fa-regular fa-star"></i>
+            </span>  
+                
+                
+            </div> 
             <div class="lingua">
                <!-- <div id="language"><span>LINGUA:</span> {{singleFilm.original_language}}</div> -->
                <span>LINGUA:    </span>
@@ -38,12 +50,16 @@
 
         data() {
             return {
-               
+                voto: ''
             }
+            
         },
         methods: {
-          
-        }
+                votoMedio(valoreSingoloVoto){
+                    this.voto = parseInt((valoreSingoloVoto / 2) )
+                    return this.voto
+                }
+            }
        
     }
 </script>

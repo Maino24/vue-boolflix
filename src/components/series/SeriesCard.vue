@@ -7,7 +7,16 @@
        <div class="cardBack">
             <div id="title"><span>TITOLO: </span><h4>{{singleSeries.name}}</h4></div>
             <div id="originalTitle"><span>TITOLO ORIGINALE: </span><div>{{singleSeries.name}}</div></div>
-            <div id="vote"><span>VOTO: </span> {{singleSeries.vote_average}}</div> 
+
+            <!--- funzione per voto -->
+            <li>Voto:{{ votoMedio(singleSeries.vote_average)}}</li>
+
+            <!--- stelline -->
+            <span v-for="(elem, index) in 5" :key="index">
+                <i v-if="(voto > index)" class="fa-solid fa-star"></i>
+                <i v-else class="fa-regular fa-star"></i>
+            </span>
+            <!---<div id="vote"><span>VOTO: </span> {{singleSeries.vote_average}}</div> -->
 
            <!-- <div id="language">{{singleSeries.original_language}}</div> -->
             <!--<img :src="`https://image.tmdb.org/t/p/w342/${singleFilm.backdrop_path}`" alt=""> -->
@@ -32,6 +41,18 @@
         props: {
             singleSeries: Object
         },
+        data() {
+            return {
+                voto: ''
+            }
+            
+        },
+        methods: {
+                votoMedio(valoreSingoloVoto){
+                    this.voto = parseInt(valoreSingoloVoto / 2)
+                    return this.voto
+                }
+            }
        
     }
 </script>

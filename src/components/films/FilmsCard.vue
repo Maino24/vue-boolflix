@@ -54,6 +54,7 @@
             }
             
         },
+        
         methods: {
                 votoMedio(valoreSingoloVoto){
                     this.voto = parseInt((valoreSingoloVoto / 2) )

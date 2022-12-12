@@ -30,11 +30,6 @@ import SeriesComp from './series/SeriesComp.vue'
             SeriesComp
         },
 
-        data(){
-            return{
-                
-            }
-        }
     }
 </script>
 
